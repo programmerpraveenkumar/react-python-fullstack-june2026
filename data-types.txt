@@ -1,0 +1,10 @@
+str --> store the strings
+int float complex -> numbers
+list(can be changed),
+tuple(no changes after declartion),
+range
+dict->key->value
+set->store unique 
+boolean-->True and False
+binary types:bytes,bytesarray,memoryview
+Nonetype: None
