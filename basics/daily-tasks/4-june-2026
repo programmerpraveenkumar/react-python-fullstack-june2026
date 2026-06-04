@@ -1,0 +1,4 @@
+get the user input and do the validation
+    email validation
+    name should be min 10 max of 15
+    mobiler number should 13 to 15 digits 
