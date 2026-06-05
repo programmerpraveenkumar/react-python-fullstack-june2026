@@ -1,0 +1,12 @@
+# show the menu
+
+# define the empty list
+after running the program show the below menu
+get the operation number from the user
+
+1.add the User
+2.print the user
+3.remove the user
+4.check the user
+5.exit
+
