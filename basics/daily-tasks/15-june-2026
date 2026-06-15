@@ -1,0 +1,164 @@
+
+## Constructor Tasks
+
+ Task 1: Student Class
+
+Create a `Student` class with:
+
+ `name`
+ `age`
+
+Use a constructor (`__init__`) to initialize the values.
+
+Create 3 student objects and print their details.
+
+---
+
+ Task 2: Employee Class
+
+Create an `Employee` class with:
+
+ `name`
+ `salary`
+
+Add a method `display()` to print employee information.
+
+---
+
+ Task 3: Product Class
+
+Create a `Product` class with:
+
+ `product_name`
+ `price`
+
+Create multiple products and display them.
+
+---
+
+## Inheritance Tasks
+
+ Task 4: Animal and Dog
+
+Create:
+
+ Parent class: `Animal`
+
+   Method: `eat()`
+ Child class: `Dog`
+
+   Method: `bark()`
+
+Create a `Dog` object and call both methods.
+
+---
+
+ Task 5: Vehicle and Car
+
+Create:
+
+ `Vehicle`
+
+   attribute: `brand`
+   method: `show_brand()`
+ `Car`
+
+   attribute: `model`
+
+Use inheritance and display both brand and model.
+
+---
+
+ Task 6: Person and Teacher
+
+Create:
+
+ `Person`
+
+   name
+ `Teacher`
+
+   subject
+
+Use `super()` to initialize the parent constructor.
+
+Print teacher details.
+
+---
+
+## Encapsulation Tasks
+
+ Task 7: BankAccount
+
+Create a class:
+
+ private variable `__balance`
+
+Methods:
+
+ `deposit(amount)`
+ `withdraw(amount)`
+ `get_balance()`
+
+Do not allow direct access to `__balance`.
+
+---
+
+ Task 8: Employee Salary
+
+Create:
+
+ private variable `__salary`
+
+Methods:
+
+ `set_salary()`
+ `get_salary()`
+
+Validate that salary cannot be negative.
+
+---
+
+ Task 9: Student Marks
+
+Create:
+
+ private variable `__marks`
+
+Methods:
+
+ `set_marks()`
+ `get_marks()`
+
+Allow marks only between 0 and 100.
+
+---
+
+## Combined Task (Constructor + Inheritance + Encapsulation)
+
+ Task 10: School System
+
+Create:
+
+Person
+
+ name
+ age
+
+Student(Person)
+
+ private variable `__grade`
+
+Methods:
+
+ `set_grade()`
+ `get_grade()`
+ `display()`
+
+Requirements:
+
+ Use constructor inheritance with `super()`
+ Grade should be private
+ Display all student information
+
+
