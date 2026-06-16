@@ -1,0 +1,7 @@
+to handle the error in programming:
+application will crash.
+if website-> 404 erro or 400 error.
+
+nameList =  ["hari","nandini","ashok"]
+nameList[10]-> error
+
