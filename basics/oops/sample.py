@@ -2,10 +2,10 @@ class Sample:
     userList=[]
     def printName(self,name):
         print(name)
-    def add_user(self,name):
-        # add the user to the list
-    def print_detail():
-        # for loop to print the list
+    # def add_user(self,name):
+    #     # add the user to the list
+    # def print_detail(self):
+    #     # for loop to print the list
 
 
 # object creation for the class
