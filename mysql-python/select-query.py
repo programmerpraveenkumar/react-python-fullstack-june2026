@@ -13,18 +13,22 @@ to connect mysql:
 
 import pymysql
 
-# connection open for mysql
-connection = pymysql.connect(
-    host="localhost",
-    port=3306,
-    user="root",
-    passwd="roottoor",
-    database="ecommerce"
-)
-cursor = connection.cursor()
-cursor.execute("select * from user")
-for row in cursor.fetchall():
-    print(row)
+try:
+    # connection open for mysql
+    connection = pymysql.connect(
+        host="localhost",
+        port=3306,
+        user="rooot",
+        passwd="roottoor",
+        database="ecommerce"
+    )
+    cursor = connection.cursor()
+    cursor.execute("select * from user")
+    for row in cursor.fetchall():
+        print(row)
 
-# always close the connection
-connection.close()
+    # always close the connection
+    connection.close()
+
+except Exception as e:
+    print("Error ",str(e))

@@ -1,0 +1,44 @@
+crud
+Htp method 
+
+Get->read
+Post->create
+Put->update
+Delete ->delete
+
+
+https://www.google.com/login?username=asfasdf
+
+
+def loginu(username:str)
+
+Protocol
+Domain name or website address
+queryparam
+
+requestbody--> separate from the url
+post,put
+
+https://www.google.com/login
+body:{
+"name":"ashok",
+"mobile":"89595985"
+}
+Requestbody:
+    will be used in post,put
+    It will send the data in dict format
+    Will accept only alphanumeric data .
+    Won't support images or videos 
+    Seperate from the url	
+    usign javascript or html form we can send the requestbody
+    to use class in requestbody we should use BaseModel from pydantic
+    from pydantic import BaseModel
+
+
+ class Login:
+    email:str
+    password:str
+
+@app.post("/register)
+def login(login:Login)
+
