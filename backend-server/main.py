@@ -8,8 +8,8 @@ to run the app:
 
 # importing the fastapi from fastapi modules 
 from fastapi import FastAPI
-from model.data import Register,Login
-
+from model.data import Register,Login,AddCart
+from db_connection import connection
 app = FastAPI()
 
 
@@ -49,6 +49,27 @@ def climate_method(type:str,total:int):
 @app.post('/user-register')
 def user_register(register_obj:Register):
     return register_obj.name+" "+str(register_obj.mobile)
+
+
+@app.post('/add-cart')
+def add_cart(cart_obj:AddCart):
+    return cart_obj.name+" "+str(cart_obj.qty)
+
+
+
+@app.get("/user")
+def get_all_user():
+    """
+      get all users from database
+    """
+    cursor = connection.cursor()
+    cursor.execute("select * from user1")
+    allrows = cursor.fetchall()
+     # close the connection if no need of db connection
+    cursor.close()
+    connection.close()
+   
+    return allrows
 
 
 # www.google.com->show search screen

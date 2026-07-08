@@ -19,3 +19,9 @@ class Register(BaseModel):
 class Login(BaseModel):
 	email:str
 	password:str
+
+
+class AddCart(BaseModel):
+      name:str
+      qty:int
+      price:float
