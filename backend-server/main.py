@@ -9,7 +9,7 @@ to run the app:
 # importing the fastapi from fastapi modules 
 from fastapi import FastAPI
 from model.data import Register,Login,AddCart
-from db_connection import connection
+from db_connection import getConnection
 app = FastAPI()
 
 
@@ -62,15 +62,31 @@ def get_all_user():
     """
       get all users from database
     """
+    connection = getConnection()
     cursor = connection.cursor()
     cursor.execute("select * from user1")
     allrows = cursor.fetchall()
      # close the connection if no need of db connection
     cursor.close()
     connection.close()
-   
     return allrows
 
+@app.post("/user")
+def post_user(register_obj:Register):
+# db query steps
+# connection open,cursor open,execution,cur.close,conn.close()
+    try:
+        connection = getConnection()
+        cursor = connection.cursor()
+        cursor.execute(f"insert into user1(name, email, mobile, password, dob)values('{register_obj.name}','{register_obj.email}','{register_obj.mobile}','{register_obj.password}','{register_obj.dob}')")
+        # to commit the actions
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return "data inserted"
+    except Exception as e:
+        # convert error to string
+        return str(e)
 
 # www.google.com->show search screen
 #www.google.com/enddpoint1/enddpoint2/enddpoint3?

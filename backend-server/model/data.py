@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Optional
 """
     email,
     name
@@ -14,7 +15,10 @@ class Register(BaseModel):
     mobile:int
     password:str
     dob:str
-    address:str
+    # this address is optional for request body
+    address:Optional[str] = None
+ 
+    
 
 class Login(BaseModel):
 	email:str
