@@ -17,7 +17,10 @@ class Register(BaseModel):
     dob:str
     # this address is optional for request body
     address:Optional[str] = None
- 
+
+class User_Update(BaseModel):
+    id:int
+    name:str
     
 
 class Login(BaseModel):

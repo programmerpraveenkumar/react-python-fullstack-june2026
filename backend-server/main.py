@@ -8,7 +8,7 @@ to run the app:
 
 # importing the fastapi from fastapi modules 
 from fastapi import FastAPI
-from model.data import Register,Login,AddCart
+from model.data import Register,Login,AddCart,User_Update
 from db_connection import getConnection
 app = FastAPI()
 
@@ -84,6 +84,43 @@ def post_user(register_obj:Register):
         cursor.close()
         connection.close()
         return "data inserted"
+    except Exception as e:
+        # convert error to string
+        return str(e)
+
+@app.put("/user")
+def put_user(update_obj:User_Update):
+# db query steps
+# connection open,cursor open,execution,cur.close,conn.close()
+    try:
+
+        connection = getConnection()
+        cursor = connection.cursor()
+        cursor.execute(f"update user1 set name='{update_obj.name}' where id={update_obj.id}")
+        # to commit the actions
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return "data updated"
+    except Exception as e:
+        # convert error to string
+        return str(e)
+    
+
+@app.delete("/user")
+def put_user(id:int):
+# db query steps
+# connection open,cursor open,execution,cur.close,conn.close()
+    try:
+
+        connection = getConnection()
+        cursor = connection.cursor()
+        cursor.execute(f"delete from user1 where id={id}")
+        # to commit the actions
+        connection.commit()
+        cursor.close()
+        connection.close()
+        return "data deleted"
     except Exception as e:
         # convert error to string
         return str(e)
