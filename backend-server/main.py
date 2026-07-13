@@ -7,7 +7,7 @@ to run the app:
 """
 
 # importing the fastapi from fastapi modules 
-from fastapi import FastAPI
+from fastapi import FastAPI,HTTPException
 from model.data import Register,Login,AddCart,User_Update
 from db_connection import getConnection
 app = FastAPI()
@@ -62,15 +62,19 @@ def get_all_user():
     """
       get all users from database
     """
-    connection = getConnection()
-    cursor = connection.cursor()
-    cursor.execute("select * from user1")
-    allrows = cursor.fetchall()
-     # close the connection if no need of db connection
-    cursor.close()
-    connection.close()
-    return allrows
-
+    try:
+        connection = getConnection()
+        cursor = connection.cursor()
+        cursor.execute("select * from user1")
+        allrows = cursor.fetchall()
+        # close the connection if no need of db connection
+        cursor.close()
+        connection.close()
+        return allrows
+    except Exception as e:
+        # convert error to string
+       raise HTTPException(400,detail=str(e))
+    
 @app.post("/user")
 def post_user(register_obj:Register):
 # db query steps
@@ -83,10 +87,10 @@ def post_user(register_obj:Register):
         connection.commit()
         cursor.close()
         connection.close()
-        return "data inserted"
+        return {"message":"data inserted"}
     except Exception as e:
         # convert error to string
-        return str(e)
+        raise HTTPException(400,detail=str(e))
 
 @app.put("/user")
 def put_user(update_obj:User_Update):
@@ -101,10 +105,10 @@ def put_user(update_obj:User_Update):
         connection.commit()
         cursor.close()
         connection.close()
-        return "data updated"
+        return {"message":"data updated"}
     except Exception as e:
         # convert error to string
-        return str(e)
+        raise HTTPException(400,detail=str(e))
     
 
 @app.delete("/user")
@@ -120,13 +124,20 @@ def put_user(id:int):
         connection.commit()
         cursor.close()
         connection.close()
-        return "data deleted"
+        return {"message":"data updated"}
     except Exception as e:
         # convert error to string
-        return str(e)
+        return {"message":str(e)}
 
 # www.google.com->show search screen
 #www.google.com/enddpoint1/enddpoint2/enddpoint3?
 #www.google.com/gmail->gmail screen
 #www.google.com/youtube->youtube screen
 #www.chatgpt.com->show the search screen
+"""
+200 to 299==> success status code
+400 to 499=>error due to server
+500 to 599=>error due to client
+
+404-->page not found
+"""
