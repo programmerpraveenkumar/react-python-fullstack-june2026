@@ -1,6 +1,35 @@
 <html>
     <head>
         <title>this is my first page</title>
+        <style>
+            /* 
+                inline => writig css on the elemens
+                internal css => writing css on the page for the elements
+
+             */
+             /* tag selector */
+             body{
+                background-color: #736767;
+             }
+            div{
+                color: red;
+                background-color: black;
+            }
+            input{
+                background-color: green;
+                color: rgb(255, 255, 255);
+            }
+            .yellow_bg{
+                background-color: #e3f308;
+            }
+            .red-text{
+                color: red;
+            }
+            /*
+                class will be represeted by (dot)
+                id
+            */
+        </style>
     </head>
     
     <body>
@@ -11,9 +40,9 @@
 
         -->
         <div>this is page title</div>
+        <div style="color: blue;"> hi how are you</div>
         <div> hi how are you</div>
-        <div> hi how are you</div>
-        <span>hi </span><span>how </span>
+        <span class="yellow_bg">hi </span><span>how </span>
         <!-- 
             input is to get the input from thr user
             attributes:
@@ -21,7 +50,7 @@
                 placeholder->show hint
         -->
         <input type="text" placeholder="Enter Username"/>
-        <input type="date" placeholder="Enter date"/>
+        <input  class="yellow_bg red-text" type="date" placeholder="Enter date"/>
         <input type="datetime-local" placeholder="Enter datetime-local"/>
         <input type="password" placeholder="Enter password"/>
         <input type="tel" placeholder="Enter phone"/>
@@ -40,9 +69,9 @@
         <h3>this is h3</h3>
         <h4>this is h4</h4>
         <h5>this is h5</h5>
-        <h6>this is h6</h6>
+        <h6 style="font-size: 55px;font-style:italic">this is h6</h6>
         <b>hi this is bold</b>
-        <i>this is italic</i>
+        <i style="font-weight: bold;">this is italic</i>
         <ul>
             <li>one</li>
             <li>two</li>
@@ -69,10 +98,73 @@ Its hymns recorded the early dawnings of Hinduism in India.[32]
 <p>
  India's pre-existing Dravidian languages were supplanted in the northern regions
 </p>
-<a href="https://www.linkedin.com">Click to go to google</a>
+<a style="color: blueviolet; background-color: chartreuse;" 
+href="https://www.linkedin.com">
+Click to go to google
+</a>
     <hr/>
     <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZYiVLTsWd-CV6jDIT4e6Oll-5HiUEJcuLIbS67tcDyA&s=10"/> -->
     <!-- <img src="ChatGPT%20Image%20Jul%208,%202026,%2003_57_08%20PM.png"/> -->
+<!-- <form action=""></form> -->
+ <label>Name</label>
+ <input type="text" placeholder="Enter Name">
+ <br/> 
+  <label>Address</label>
+ <textarea  placeholder="Enter Address"></textarea>
+ <input type="button" value="Login">
+ <label for="">choose country</label>
+ <select>
+    <option>usa</option>
+    <option>uae</option>
+    <option>uk</option>
+    <option>ind</option>
+ </select>
+ <!-- 
+    text
+    password->hide the text
+    date->date choose
+    file->file choose
+    button->show the button
+ -->
+
+ <table border="1">
+    <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+            </tr>
+    </thead>
+    
+    <tr>
+        <td>asdasdf</td>
+        <td>asdfdsaf</td>
+    </tr>
+    <tr>
+       <td>asdasdf</td>
+        <td>asdfdsaf</td>
+    </tr>
+    <tr>
+        <td>asdasdf</td>
+        <td>asdfdsaf</td>
+    </tr>
+    <tr>
+        <td>asdasdf</td>
+        <td>asdfdsaf</td>
+          <td>asdfdsaf</td>
+    </tr>
+
+ </table>
+<!-- block elements takes full width -->
+<div>helo</div>
+<div>helo</div>
+<section></section>
+<header> </header>
+<footer></footer>
+
+<!-- inline elements takes only width for its content-->
+<span>hello</span>
+<span>hello</span>
+
 </body>
 
 </html>
