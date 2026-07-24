@@ -1,0 +1,20 @@
+margin
+    create space around the element without bg color
+
+padding
+    create space around the element with bg color
+
+border
+    will create border aroudn the element
+
+font-size
+    size of the text
+
+display:flex
+    will control the child elements using parent
+flex:1-> even space will be allocated all child elements
+
+width:50%
+percenatage depends on the screen size
+
+media query

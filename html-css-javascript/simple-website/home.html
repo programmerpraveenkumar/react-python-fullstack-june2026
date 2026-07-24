@@ -19,8 +19,71 @@
         }
         .description{
             font-size: 15px;
-            font-family: sans-serif
+            font-family: sans-serif;
+             line-height: 25px;
         }
+        .img{
+            height: 450px;
+        }
+        .page-content{
+            background-color: aqua;
+            /* space between the lines in an element */
+            line-height: 25px;
+            height: 70px;
+            /* to handle the content when overflow the height */
+            /* overflow:hiddent;//hide the content */
+            overflow: scroll;
+            text-align: center;
+        }
+        .clock{
+            position:fixed;
+            top:50px;
+            right:250px;
+            background-color: red;
+        }
+        .last-content{
+            display: none;
+        }
+        /* css will be loaded in the mobile */
+       @media screen and (max-width: 600px) {
+            .page_title{
+                font-size: 10px;
+            }
+            .description{
+                font-size: 10px;
+               
+            }
+             .img{
+                height: 250px;
+            }
+            .clock{
+                top:500px;
+                right:50px;
+            }
+        }
+        /* want to appply only for tv */
+        @media screen and (min-width: 1024px) and (max-width: 1440px) {
+            .page_title{
+                font-size: 20px;
+            }
+            .description{
+                font-size: 20px;
+            }
+             .img{
+                height: 300px;
+            }
+        }
+        /*
+        overflow
+        position:fixed
+        line-spacing
+        text-align
+        display:
+            none ->hide the element
+            block->show the element
+            flex-> will control the child elements
+            grid->will create grid
+         */
     </style>
 </head>
 <body>
@@ -35,8 +98,8 @@
         </div>
         <div class="main-content">
 
-            <h1>Welcome to My Home Page</h1>   
-            <img style="height: 200px;" src="../img.png" alt="">
+            <h1 class="page_title">Welcome to My Home Page</h1>   
+            <img class="img" src="../img.png" alt="">
         </div>
         <div class="side-content">
 
@@ -45,10 +108,27 @@
             </p>
         </div>
     </section>
+    <section class="page-content"><p>
+                At its core, GenAI relies on massive datasets and complex deep learning algorithms. The systems analyze these datasets to learn the underlying rules and structures of the information. When you give the AI a prompt, it doesn’t just copy past work; instead, it uses probabilistic reasoning to predict and generate the next logical word, pixel, or sound to build a coherent, contextually relevant response.
+
+                At its core, GenAI relies on massive datasets and complex deep learning algorithms. The systems analyze these datasets to learn the underlying rules and structures of the information. When you give the AI a prompt, it doesn’t just copy past work; instead, it uses probabilistic reasoning to predict and generate the next logical word, pixel, or sound to build a coherent, contextually relevant response.
+
+                At its core, GenAI relies on massive datasets and complex deep learning algorithms. The systems analyze these datasets to learn the underlying rules and structures of the information. When you give the AI a prompt, it doesn’t just copy past work; instead, it uses probabilistic reasoning to predict and generate the next logical word, pixel, or sound to build a coherent, contextually relevant response.
+
+                At its core, GenAI relies on massive datasets and complex deep learning algorithms. The systems analyze these datasets to learn the underlying rules and structures of the information. When you give the AI a prompt, it doesn’t just copy past work; instead, it uses probabilistic reasoning to predict and generate the next logical word, pixel, or sound to build a coherent, contextually relevant response.
+    </p></section>
+
+     <section class="page-content last-content">
+            <p>
+                    At its core, GenAI relies on 
+            </p>
+    </section>
 
     <footer style="text-align: center;background-color: aliceblue;">
         copyright@2026
     </footer>
-    
+        <div class="clock">
+            <span>10:00AM</span>
+        </div>
 </body>
 </html>
